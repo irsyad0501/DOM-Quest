@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Perpustakaan - Manipulasi DOM</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Daftar Buku Perpustakaan</h2>
+    
+    <!-- Elemen tempat pesan notifikasi ditampilkan -->
+    <div id="notification-message" class="notification">
+      Silakan pilih buku yang ingin dipinjam.
+    </div>
+
+    <!-- Daftar Buku -->
+    <ul id="book-list">
+      <li class="book-item" data-id="1">
+        <span class="title">Laskar Pelangi</span>
+        <span class="status available">Tersedia</span>
+        <button class="borrow-btn">Pinjam</button>
+      </li>
+      <li class="book-item" data-id="2">
+        <span class="title">Bumi Manusia</span>
+        <span class="status borrowed">Dipinjam</span>
+        <button class="borrow-btn">Pinjam</button>
+      </li>
+      <li class="book-item" data-id="3">
+        <span class="title">Filosofi Teras</span>
+        <span class="status available">Tersedia</span>
+        <button class="borrow-btn">Pinjam</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
