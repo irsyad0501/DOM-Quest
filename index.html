@@ -3,39 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistem Perpustakaan - Manipulasi DOM</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Sistem Manajemen Perpustakaan - DOM Complete</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
-    <h2>Daftar Buku Perpustakaan</h2>
-    
-    <!-- Elemen tempat pesan notifikasi ditampilkan -->
+    <h2>Sistem Manajemen Perpustakaan</h2>
+
+    <!-- [8] Form Input & Validasi Data -->
+    <form id="add-book-form">
+      <div class="form-group">
+        <label for="book-title-input">Judul Buku Baru:</label>
+        <input type="text" id="book-title-input" placeholder="Ketik judul buku..." autocomplete="off">
+        
+        <!-- [5] Live Preview dari Event Input -->
+        <small class="preview-text">Pratinjau: <span id="title-preview">-</span></small>
+        <!-- Pesan Error Validasi -->
+        <small id="error-message" class="error-text"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="category-select">Kategori:</label>
+        <select id="category-select">
+          <option value="">-- Pilih Kategori --</option>
+          <option value="Novel">Novel</option>
+          <option value="Filsafat">Filsafat</option>
+          <option value="Sains">Sains</option>
+        </select>
+      </div>
+
+      <!-- [5] Tombol Submit -->
+      <button type="submit" id="submit-btn">Tambah Buku</button>
+    </form>
+
+    <hr>
+
+    <!-- Notifikasi Aktivitas -->
     <div id="notification-message" class="notification">
-      Silakan pilih buku yang ingin dipinjam.
+      Silakan kelola daftar buku di bawah ini.
     </div>
 
-    <!-- Daftar Buku -->
+    <!-- [1, 9] List Utama Daftar Buku -->
+    <h3>Daftar Buku Tersedia</h3>
     <ul id="book-list">
       <li class="book-item" data-id="1">
-        <span class="title">Laskar Pelangi</span>
-        <span class="status available">Tersedia</span>
-        <button class="borrow-btn">Pinjam</button>
+        <div class="book-info">
+          <span class="title">Laskar Pelangi</span>
+          <span class="category">(Novel)</span>
+        </div>
+        <div class="book-actions">
+          <span class="status available">Tersedia</span>
+          <button class="borrow-btn">Pinjam</button>
+          <button class="delete-btn">Hapus</button>
+        </div>
       </li>
       <li class="book-item" data-id="2">
-        <span class="title">Bumi Manusia</span>
-        <span class="status borrowed">Dipinjam</span>
-        <button class="borrow-btn">Pinjam</button>
-      </li>
-      <li class="book-item" data-id="3">
-        <span class="title">Filosofi Teras</span>
-        <span class="status available">Tersedia</span>
-        <button class="borrow-btn">Pinjam</button>
+        <div class="book-info">
+          <span class="title">Bumi Manusia</span>
+          <span class="category">(Novel)</span>
+        </div>
+        <div class="book-actions">
+          <span class="status borrowed">Dipinjam</span>
+          <button class="borrow-btn" disabled>Pinjam</button>
+          <button class="delete-btn">Hapus</button>
+        </div>
       </li>
     </ul>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
